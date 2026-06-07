@@ -1,0 +1,2414 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EcoAction: Langkah Kecil untuk Masa Depan Bumi</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+
+--emerald:#16a34a;
+--sky:#0ea5e9;
+--orange:#f97316;
+--light:#f8fafc;
+--dark:#1e293b;
+--gray:#64748b;
+--success:#22c55e;
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+background:var(--light);
+color:#333;
+overflow-x:hidden;
+
+}
+
+/* =======================================
+LANDING PAGE
+======================================= */
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+text-align:center;
+
+padding:40px;
+
+background:
+linear-gradient(
+rgba(22,163,74,0.75),
+rgba(14,165,233,0.75)
+),
+
+url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e");
+
+background-size:cover;
+background-position:center;
+
+color:white;
+
+}
+
+.hero-content{
+
+max-width:900px;
+
+}
+
+.hero h1{
+
+font-size:4rem;
+margin-bottom:15px;
+
+}
+
+.hero h2{
+
+font-size:2rem;
+margin-bottom:20px;
+
+}
+
+.hero p{
+
+font-size:1.2rem;
+margin-bottom:30px;
+
+}
+
+.btn{
+
+background:var(--orange);
+color:white;
+
+padding:15px 30px;
+
+border:none;
+border-radius:12px;
+
+font-size:16px;
+font-weight:600;
+
+cursor:pointer;
+
+transition:0.3s;
+
+}
+
+.btn:hover{
+
+transform:translateY(-3px);
+
+}
+
+/* =======================================
+MENU
+======================================= */
+
+.page{
+
+display:none;
+
+padding:50px 8%;
+
+}
+
+.section-title{
+
+text-align:center;
+
+font-size:2.2rem;
+
+color:var(--emerald);
+
+margin-bottom:30px;
+
+}
+
+.menu-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+}
+
+.menu-card{
+
+background:white;
+
+padding:30px;
+
+border-radius:20px;
+
+text-align:center;
+
+cursor:pointer;
+
+box-shadow:
+0 5px 20px rgba(0,0,0,0.1);
+
+transition:0.3s;
+
+}
+
+.menu-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.menu-icon{
+
+font-size:50px;
+
+margin-bottom:15px;
+
+}
+
+/* =======================================
+CARD
+======================================= */
+
+.card{
+
+background:white;
+
+padding:25px;
+
+border-radius:18px;
+
+margin-bottom:20px;
+
+box-shadow:
+0 5px 15px rgba(0,0,0,0.08);
+
+}
+
+.card h3{
+
+color:var(--emerald);
+
+margin-bottom:10px;
+
+}
+
+.card ul{
+
+padding-left:20px;
+
+line-height:2;
+
+}
+
+/* =======================================
+BUTTON KEMBALI
+======================================= */
+
+.back-btn{
+
+background:var(--orange);
+
+color:white;
+
+border:none;
+
+padding:12px 22px;
+
+border-radius:10px;
+
+cursor:pointer;
+
+margin-bottom:25px;
+
+}
+
+/* =======================================
+SUB MENU
+======================================= */
+
+.sub-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+margin-bottom:30px;
+
+}
+
+.sub-btn{
+
+background:
+linear-gradient(
+135deg,
+var(--emerald),
+var(--sky)
+);
+
+color:white;
+
+border:none;
+
+padding:20px;
+
+font-size:17px;
+
+font-weight:600;
+
+border-radius:15px;
+
+cursor:pointer;
+
+}
+
+/* =======================================
+DASHBOARD
+======================================= */
+
+.dashboard{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+margin-bottom:30px;
+
+}
+
+.stat-card{
+
+background:white;
+
+padding:20px;
+
+border-radius:18px;
+
+text-align:center;
+
+box-shadow:
+0 5px 15px rgba(0,0,0,0.08);
+
+}
+
+.stat-card h3{
+
+font-size:2rem;
+
+color:var(--emerald);
+
+}
+
+.stat-card p{
+
+color:var(--gray);
+
+}
+
+/* =======================================
+PROGRESS
+======================================= */
+
+.progress-container{
+
+background:#ddd;
+
+height:20px;
+
+border-radius:20px;
+
+overflow:hidden;
+
+margin-top:10px;
+
+}
+
+.progress-bar{
+
+height:100%;
+
+width:0%;
+
+background:
+linear-gradient(
+90deg,
+var(--emerald),
+var(--sky)
+);
+
+transition:0.5s;
+
+}
+
+/* =======================================
+BADGE
+======================================= */
+
+.badge{
+
+display:inline-block;
+
+padding:10px 20px;
+
+border-radius:30px;
+
+color:white;
+
+font-weight:600;
+
+margin-top:15px;
+
+background:var(--emerald);
+
+}
+
+/* =======================================
+CHALLENGE
+======================================= */
+
+.challenge{
+
+background:white;
+
+padding:18px;
+
+border-radius:15px;
+
+margin-bottom:15px;
+
+display:flex;
+
+justify-content:space-between;
+align-items:center;
+
+box-shadow:
+0 4px 12px rgba(0,0,0,0.08);
+
+}
+
+.challenge label{
+
+font-weight:500;
+
+}
+
+/* =======================================
+FORM
+======================================= */
+
+input,
+textarea{
+
+width:100%;
+
+padding:12px;
+
+margin-top:10px;
+margin-bottom:15px;
+
+border-radius:10px;
+border:1px solid #ccc;
+
+}
+
+textarea{
+
+resize:none;
+
+height:120px;
+
+}
+
+/* =======================================
+GALLERY
+======================================= */
+
+.gallery{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:15px;
+
+}
+
+.gallery img{
+
+width:100%;
+height:220px;
+
+object-fit:cover;
+
+border-radius:15px;
+
+}
+
+/* =======================================
+CERTIFICATE
+======================================= */
+
+.certificate{
+
+display:none;
+
+background:white;
+
+padding:40px;
+
+border:8px solid var(--emerald);
+
+border-radius:20px;
+
+text-align:center;
+
+margin-top:30px;
+
+}
+
+.certificate h1{
+
+color:var(--emerald);
+
+margin-bottom:20px;
+
+}
+
+/* =======================================
+FOOTER
+======================================= */
+
+footer{
+
+background:var(--dark);
+
+color:white;
+
+text-align:center;
+
+padding:25px;
+
+margin-top:50px;
+
+}
+
+/* =======================================
+RESPONSIVE
+======================================= */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.5rem;
+}
+
+.hero h2{
+font-size:1.5rem;
+}
+
+.section-title{
+font-size:1.8rem;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ==========================
+LANDING PAGE
+========================== -->
+
+<section
+id="landingPage"
+class="hero">
+
+<div class="hero-content">
+
+<div style="font-size:90px">
+🌍🌳🦋♻️
+</div>
+
+<h1>
+EcoAction
+</h1>
+
+<h2>
+Langkah Kecil untuk Masa Depan Bumi
+</h2>
+
+<p>
+Bersama Menjaga Bumi,
+untuk Masa Depan yang Lebih Baik
+</p>
+
+<button
+class="btn"
+onclick="showMenu()">
+
+Mulai Beraksi
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ==========================
+MENU UTAMA
+========================== -->
+
+<section
+id="menuPage"
+class="page">
+
+<h2 class="section-title">
+Menu Utama
+</h2>
+
+<div class="menu-grid">
+
+<div
+class="menu-card"
+onclick="openPage('visiPage')">
+
+<div class="menu-icon">🎯</div>
+
+<h3>Visi & Misi</h3>
+
+</div>
+
+<div
+class="menu-card"
+onclick="openPage('konservasiPage')">
+
+<div class="menu-icon">🌱</div>
+
+<h3>Informasi Konservasi</h3>
+
+</div>
+
+<div
+class="menu-card"
+onclick="openPage('tantanganPage')">
+
+<div class="menu-icon">🏆</div>
+
+<h3>Tantangan Harian</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================
+VISI & MISI
+========================== -->
+
+<section
+id="visiPage"
+class="page">
+
+<button
+class="back-btn"
+onclick="backToMenu()">
+
+← Kembali
+
+</button>
+
+<h2 class="section-title">
+🎯 Visi & Misi
+</h2>
+
+<div class="card">
+
+<h3>Visi</h3>
+
+<p>
+
+Menjadi platform digital edukatif yang
+menginspirasi masyarakat untuk berperan
+aktif dalam pelestarian lingkungan,
+penguatan nilai karakter konservasi,
+dan pembangunan berkelanjutan demi
+masa depan bumi yang lebih baik.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Misi</h3>
+
+<ul>
+
+<li>
+Meningkatkan kesadaran masyarakat
+tentang pentingnya konservasi lingkungan.
+</li>
+
+<li>
+Menyediakan media pembelajaran
+interaktif mengenai konservasi.
+</li>
+
+<li>
+Mendorong aksi nyata masyarakat
+dalam menjaga lingkungan.
+</li>
+
+<li>
+Melestarikan budaya dan kearifan lokal
+yang mendukung konservasi.
+</li>
+
+<li>
+Membangun generasi peduli lingkungan
+melalui tantangan dan aksi harian.
+</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>🌍 Nilai Utama EcoAction</h3>
+
+<ul>
+
+<li>Peduli Lingkungan</li>
+
+<li>Tanggung Jawab</li>
+
+<li>Keberlanjutan</li>
+
+<li>Gotong Royong</li>
+
+<li>Inovasi</li>
+
+<li>Integritas</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- ==========================
+INFORMASI KONSERVASI
+========================== -->
+
+<section
+id="konservasiPage"
+class="page">
+
+<button
+class="back-btn"
+onclick="backToMenu()">
+
+← Kembali
+
+</button>
+
+<h2 class="section-title">
+🌱 Informasi Konservasi
+</h2>
+
+<div class="sub-grid">
+
+<button
+class="sub-btn"
+onclick="showSubContent('karakterContent')">
+
+⭐ Nilai Karakter
+
+</button>
+
+<button
+class="sub-btn"
+onclick="showSubContent('budayaContent')">
+
+🎨 Seni Budaya
+
+</button>
+
+<button
+class="sub-btn"
+onclick="showSubContent('sdaContent')">
+
+🌳 SDA & Lingkungan
+
+</button>
+
+</div>
+
+<!-- ==========================
+NILAI KARAKTER
+========================== -->
+
+<div
+id="karakterContent"
+class="subContent"
+style="display:none;">
+
+<div class="card">
+
+<h3>
+⭐ Nilai Karakter Konservasi
+</h3>
+
+<p>
+
+Karakter konservasi merupakan
+perilaku yang mencerminkan
+kepedulian terhadap lingkungan
+dan keberlanjutan kehidupan.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+Nilai-Nilai Karakter
+</h3>
+
+<ul>
+
+<li>
+Tanggung Jawab
+</li>
+
+<li>
+Disiplin
+</li>
+
+<li>
+Peduli Lingkungan
+</li>
+
+<li>
+Kerja Sama
+</li>
+
+<li>
+Gotong Royong
+</li>
+
+<li>
+Kejujuran
+</li>
+
+<li>
+Keadilan
+</li>
+
+<li>
+Keteladanan
+</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>
+Contoh Implementasi
+</h3>
+
+<ul>
+
+<li>Membuang sampah pada tempatnya</li>
+
+<li>Menghemat penggunaan listrik</li>
+
+<li>Menghemat penggunaan air</li>
+
+<li>Menanam pohon</li>
+
+<li>Merawat tanaman sekitar</li>
+
+<li>Melakukan kerja bakti lingkungan</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ==========================
+SENI BUDAYA
+========================== -->
+
+<div
+id="budayaContent"
+class="subContent"
+style="display:none;">
+
+<div class="card">
+
+<h3>
+🎨 Seni Budaya dan Konservasi
+</h3>
+
+<p>
+
+Konservasi tidak hanya berkaitan
+dengan lingkungan alam, tetapi juga
+pelestarian budaya dan kearifan lokal.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+Bentuk Konservasi Budaya
+</h3>
+
+<ul>
+
+<li>
+Pelestarian Parikan Jawa
+</li>
+
+<li>
+Tari Konservasi
+</li>
+
+<li>
+Senam Konservasi
+</li>
+
+<li>
+Kegiatan Selasa Legen
+</li>
+
+<li>
+Pelestarian Bahasa Daerah
+</li>
+
+<li>
+Pemakaian Busana Tradisional
+</li>
+
+<li>
+Pelestarian Kesenian Daerah
+</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>
+Mengapa Penting?
+</h3>
+
+<p>
+
+Budaya lokal mengandung banyak
+nilai konservasi yang mengajarkan
+manusia untuk hidup harmonis
+dengan alam dan sesama.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- ==========================
+SDA DAN LINGKUNGAN
+========================== -->
+
+<div
+id="sdaContent"
+class="subContent"
+style="display:none;">
+
+<div class="card">
+
+<h2>
+🌳 Sumber Daya Alam dan Lingkungan
+</h2>
+
+<p>
+
+Indonesia merupakan negara
+megabiodiversitas yang memiliki
+kekayaan hayati dan non-hayati
+yang sangat besar sehingga perlu
+dikelola secara berkelanjutan.
+
+</p>
+
+</div>
+
+<!-- Keanekaragaman Hayati -->
+
+<div class="card">
+
+<h3>
+🦋 Keanekaragaman Hayati
+</h3>
+
+<p>
+
+Keanekaragaman hayati adalah
+variasi makhluk hidup yang
+mencakup genetik, spesies,
+dan ekosistem.
+
+</p>
+
+<h4>
+1. Keanekaragaman Genetik
+</h4>
+
+<p>
+
+Perbedaan sifat dalam satu spesies.
+
+Contoh:
+Durian Petruk,
+Durian Montong,
+Padi IR64,
+Padi Ciherang.
+
+</p>
+
+<h4>
+2. Keanekaragaman Spesies
+</h4>
+
+<p>
+
+Perbedaan antar jenis makhluk hidup.
+
+Contoh:
+
+Komodo,
+Orangutan,
+Harimau Sumatera,
+Cenderawasih.
+
+</p>
+
+<h4>
+3. Keanekaragaman Ekosistem
+</h4>
+
+<p>
+
+Keanekaragaman lingkungan hidup.
+
+Contoh:
+
+Hutan hujan tropis,
+Mangrove,
+Terumbu karang,
+Padang lamun.
+
+</p>
+
+</div>
+
+<!-- Non Hayati -->
+
+<div class="card">
+
+<h3>
+⛰️ Sumber Daya Alam Non-Hayati
+</h3>
+
+<p>
+
+Sumber daya yang berasal dari
+unsur tidak hidup.
+
+</p>
+
+<ul>
+
+<li>Minyak Bumi</li>
+
+<li>Gas Alam</li>
+
+<li>Batu Bara</li>
+
+<li>Emas</li>
+
+<li>Nikel</li>
+
+<li>Timah</li>
+
+<li>Air</li>
+
+<li>Tanah</li>
+
+<li>Udara</li>
+
+</ul>
+
+<p>
+
+Konservasi dilakukan melalui:
+
+</p>
+
+<ul>
+
+<li>Reklamasi</li>
+
+<li>Revegetasi</li>
+
+<li>Pengelolaan Berkelanjutan</li>
+
+<li>Edukasi Masyarakat</li>
+
+<li>Regulasi Lingkungan</li>
+
+</ul>
+
+</div>
+
+<!-- Perubahan Iklim -->
+
+<div class="card">
+
+<h3>
+🌡️ Perubahan Iklim
+</h3>
+
+<p>
+
+Perubahan iklim terjadi akibat
+peningkatan gas rumah kaca
+yang menyebabkan pemanasan global.
+
+</p>
+
+<h4>Penyebab</h4>
+
+<ul>
+
+<li>Pembakaran bahan bakar fosil</li>
+
+<li>Deforestasi</li>
+
+<li>Polusi industri</li>
+
+<li>Transportasi beremisi tinggi</li>
+
+</ul>
+
+<h4>Dampak</h4>
+
+<ul>
+
+<li>Kenaikan suhu global</li>
+
+<li>Banjir</li>
+
+<li>Kekeringan</li>
+
+<li>Cuaca ekstrem</li>
+
+<li>Kerusakan ekosistem</li>
+
+</ul>
+
+<h4>Solusi</h4>
+
+<ul>
+
+<li>Energi Terbarukan</li>
+
+<li>Transportasi Hijau</li>
+
+<li>Green Building</li>
+
+<li>Reboisasi</li>
+
+<li>Efisiensi Energi</li>
+
+</ul>
+
+</div>
+
+<!-- Sampah -->
+
+<div class="card">
+
+<h3>
+♻️ Pengelolaan Sampah
+</h3>
+
+<p>
+
+Pengelolaan sampah bertujuan
+mengurangi pencemaran lingkungan
+dan menjaga kualitas hidup.
+
+</p>
+
+<h4>
+Reduce
+</h4>
+
+<p>
+Mengurangi penggunaan barang sekali pakai.
+</p>
+
+<h4>
+Reuse
+</h4>
+
+<p>
+Menggunakan kembali barang yang masih layak.
+</p>
+
+<h4>
+Recycle
+</h4>
+
+<p>
+Mendaur ulang sampah menjadi produk baru.
+</p>
+
+<h4>
+Contoh Praktik
+</h4>
+
+<ul>
+
+<li>Membawa tumbler</li>
+
+<li>Menggunakan tas kain</li>
+
+<li>Membuat kompos</li>
+
+<li>Bank sampah</li>
+
+<li>Daur ulang plastik</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================
+TANTANGAN HARIAN
+========================== -->
+
+<section
+id="tantanganPage"
+class="page">
+
+<button
+class="back-btn"
+onclick="backToMenu()">
+
+← Kembali
+
+</button>
+
+<h2 class="section-title">
+🏆 Tantangan Harian Konservasi
+</h2>
+
+<!-- Dashboard -->
+
+<div class="dashboard">
+
+<div class="stat-card">
+
+<h3 id="totalPoints">
+0
+</h3>
+
+<p>Total Poin</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3 id="weeklyPoints">
+0
+</h3>
+
+<p>Poin Mingguan</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3 id="totalActions">
+0
+</h3>
+
+<p>Total Aksi</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3 id="streakDays">
+0
+</h3>
+
+<p>Hari Beruntun</p>
+
+</div>
+
+</div>
+
+<!-- Progress -->
+
+<div class="card">
+
+<h3>
+📈 Progress Konservasi
+</h3>
+
+<div class="progress-container">
+
+<div
+id="progressBar"
+class="progress-bar">
+
+</div>
+
+</div>
+
+<div
+id="badgeLevel"
+class="badge">
+
+Eco Beginner
+
+</div>
+
+<p
+style="margin-top:15px">
+
+🎯 Selesaikan tantangan selama
+7 hari berturut-turut untuk
+mendapatkan sertifikat
+Earth Guardian.
+
+</p>
+
+</div>
+
+<!-- Tantangan -->
+
+<div class="card">
+
+<h3>
+🌍 Pilih Tantangan Hari Ini
+</h3>
+
+</div>
+
+<div class="challenge">
+
+<label>
+
+🥤 Membawa Tumbler
+
+(+10 poin)
+
+</label>
+
+<input
+type="checkbox"
+data-point="10"
+class="challengeCheck">
+
+</div>
+
+<div class="challenge">
+
+<label>
+
+♻️ Mengurangi Penggunaan Plastik
+
+(+15 poin)
+
+</label>
+
+<input
+type="checkbox"
+data-point="15"
+class="challengeCheck">
+
+</div>
+
+<div class="challenge">
+
+<label>
+
+🧹 Membersihkan Lingkungan
+
+(+20 poin)
+
+</label>
+
+<input
+type="checkbox"
+data-point="20"
+class="challengeCheck">
+
+</div>
+
+<div class="challenge">
+
+<label>
+
+🗑️ Memilah Sampah
+
+(+15 poin)
+
+</label>
+
+<input
+type="checkbox"
+data-point="15"
+class="challengeCheck">
+
+</div>
+
+<div class="challenge">
+
+<label>
+
+💡 Menghemat Listrik
+
+(+10 poin)
+
+</label>
+
+<input
+type="checkbox"
+data-point="10"
+class="challengeCheck">
+
+</div>
+
+<div class="challenge">
+
+<label>
+
+🚿 Menghemat Air
+
+(+10 poin)
+
+</label>
+
+<input
+type="checkbox"
+data-point="10"
+class="challengeCheck">
+
+</div>
+
+<div class="challenge">
+
+<label>
+
+🌱 Menanam Tanaman
+
+(+25 poin)
+
+</label>
+
+<input
+type="checkbox"
+data-point="25"
+class="challengeCheck">
+
+</div>
+
+<div class="challenge">
+
+<label>
+
+🚴 Menggunakan Transportasi Ramah Lingkungan
+
+(+20 poin)
+
+</label>
+
+<input
+type="checkbox"
+data-point="20"
+class="challengeCheck">
+
+</div>
+
+<!-- Upload Bukti -->
+
+<div class="card">
+
+<h3>
+📸 Upload Bukti Aksi
+</h3>
+
+<input
+type="file"
+id="photoUpload"
+accept="image/*">
+
+</div>
+
+<!-- Laporan -->
+
+<div class="card">
+
+<h3>
+📝 Laporan Aksi
+</h3>
+
+<textarea
+id="activityDesc"
+placeholder="Tuliskan kegiatan yang dilakukan...">
+</textarea>
+
+<input
+type="text"
+id="activityLocation"
+placeholder="Lokasi kegiatan">
+
+<input
+type="date"
+id="activityDate">
+
+<button
+class="btn"
+onclick="saveActionReport()">
+
+Simpan Laporan
+
+</button>
+
+</div>
+
+<!-- Rekap Mingguan -->
+
+<div class="card">
+
+<h3>
+📅 Rekap Mingguan
+</h3>
+
+<table
+style="
+width:100%;
+border-collapse:collapse;
+">
+
+<tr>
+
+<th>Hari</th>
+<th>Poin</th>
+
+</tr>
+
+<tr>
+<td>Senin</td>
+<td id="mondayPoint">0</td>
+</tr>
+
+<tr>
+<td>Selasa</td>
+<td id="tuesdayPoint">0</td>
+</tr>
+
+<tr>
+<td>Rabu</td>
+<td id="wednesdayPoint">0</td>
+</tr>
+
+<tr>
+<td>Kamis</td>
+<td id="thursdayPoint">0</td>
+</tr>
+
+<tr>
+<td>Jumat</td>
+<td id="fridayPoint">0</td>
+</tr>
+
+<tr>
+<td>Sabtu</td>
+<td id="saturdayPoint">0</td>
+</tr>
+
+<tr>
+<td>Minggu</td>
+<td id="sundayPoint">0</td>
+</tr>
+
+</table>
+
+</div>
+
+<!-- Galeri -->
+
+<div class="card">
+
+<h3>
+🖼️ Galeri Aksi Konservasi
+</h3>
+
+<div
+id="galleryContainer"
+class="gallery">
+
+</div>
+
+</div>
+
+<!-- Daftar Laporan -->
+
+<div class="card">
+
+<h3>
+📚 Riwayat Laporan
+</h3>
+
+<div
+id="reportContainer">
+
+</div>
+
+</div>
+
+<!-- Sertifikat -->
+
+<div
+id="certificateSection"
+class="certificate">
+
+<h1>
+🏅 SERTIFIKAT APRESIASI
+</h1>
+
+<h2>
+EcoAction:
+Langkah Kecil untuk Masa Depan Bumi
+</h2>
+
+<br>
+
+<p>
+
+Diberikan kepada
+
+</p>
+
+<h2 id="certificateName">
+
+Peserta EcoAction
+
+</h2>
+
+<br>
+
+<p>
+
+Sebagai Agen Konservasi
+yang telah berhasil
+menyelesaikan tantangan
+selama
+
+<b>7 hari berturut-turut</b>
+
+dan menunjukkan komitmen
+terhadap pelestarian lingkungan.
+
+</p>
+
+<br>
+
+<p>
+
+Status:
+<b>Earth Guardian</b>
+
+</p>
+
+<br>
+
+<button
+class="btn"
+onclick="window.print()">
+
+🖨️ Cetak Sertifikat
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ==========================
+FOOTER
+========================== -->
+
+<footer>
+
+<p>
+
+🌍 EcoAction: Langkah Kecil untuk Masa Depan Bumi
+
+</p>
+
+<p>
+
+Membangun Generasi Peduli Lingkungan
+melalui Aksi Nyata dan Konservasi Berkelanjutan
+
+</p>
+
+</footer>
+
+<script>
+
+/* ==========================================
+NAVIGASI HALAMAN
+========================================== */
+
+function showMenu(){
+
+document.getElementById(
+"landingPage"
+).style.display="none";
+
+document.getElementById(
+"menuPage"
+).style.display="block";
+
+loadDashboard();
+
+}
+
+function openPage(id){
+
+document.querySelectorAll(
+".page"
+).forEach(page=>{
+
+page.style.display="none";
+
+});
+
+document.getElementById(id)
+.style.display="block";
+
+}
+
+function backToMenu(){
+
+document.querySelectorAll(
+".page"
+).forEach(page=>{
+
+page.style.display="none";
+
+});
+
+document.getElementById(
+"menuPage"
+).style.display="block";
+
+}
+
+function showSubContent(id){
+
+document.querySelectorAll(
+".subContent"
+).forEach(item=>{
+
+item.style.display="none";
+
+});
+
+document.getElementById(id)
+.style.display="block";
+
+}
+
+/* ==========================================
+LOCAL STORAGE
+========================================== */
+
+let totalPoint =
+Number(
+localStorage.getItem(
+"eco_total_point"
+)
+) || 0;
+
+let streak =
+Number(
+localStorage.getItem(
+"eco_streak"
+)
+) || 0;
+
+let totalAction =
+Number(
+localStorage.getItem(
+"eco_total_action"
+)
+) || 0;
+
+let weeklyData =
+JSON.parse(
+localStorage.getItem(
+"eco_weekly"
+)
+) || {
+
+1:0,
+2:0,
+3:0,
+4:0,
+5:0,
+6:0,
+0:0
+
+};
+
+let reports =
+JSON.parse(
+localStorage.getItem(
+"eco_reports"
+)
+) || [];
+
+let gallery =
+JSON.parse(
+localStorage.getItem(
+"eco_gallery"
+)
+) || [];
+
+/* ==========================================
+TANTANGAN HARIAN
+========================================== */
+
+document.addEventListener(
+"DOMContentLoaded",
+()=>{
+
+loadDashboard();
+
+const checks =
+document.querySelectorAll(
+".challengeCheck"
+);
+
+checks.forEach(check=>{
+
+check.addEventListener(
+"change",
+
+function(){
+
+let point =
+Number(
+this.dataset.point
+);
+
+if(this.checked){
+
+totalPoint += point;
+
+}else{
+
+totalPoint -= point;
+
+if(totalPoint < 0){
+
+totalPoint = 0;
+
+}
+
+}
+
+localStorage.setItem(
+"eco_total_point",
+totalPoint
+);
+
+loadDashboard();
+
+}
+
+);
+
+});
+
+});
+
+/* ==========================================
+DASHBOARD
+========================================== */
+
+function loadDashboard(){
+
+if(
+document.getElementById(
+"totalPoints"
+)
+){
+
+document.getElementById(
+"totalPoints"
+).innerText =
+totalPoint;
+
+}
+
+if(
+document.getElementById(
+"weeklyPoints"
+)
+){
+
+let totalWeekly = 0;
+
+Object.values(
+weeklyData
+).forEach(val=>{
+
+totalWeekly += val;
+
+});
+
+document.getElementById(
+"weeklyPoints"
+).innerText =
+totalWeekly;
+
+}
+
+if(
+document.getElementById(
+"totalActions"
+)
+){
+
+document.getElementById(
+"totalActions"
+).innerText =
+totalAction;
+
+}
+
+if(
+document.getElementById(
+"streakDays"
+)
+){
+
+document.getElementById(
+"streakDays"
+).innerText =
+streak;
+
+}
+
+updateProgress();
+
+loadWeeklyTable();
+
+loadReports();
+
+loadGallery();
+
+checkCertificate();
+
+}
+
+/* ==========================================
+PROGRESS BAR
+========================================== */
+
+function updateProgress(){
+
+let progress =
+Math.min(
+(totalPoint/300)*100,
+100
+);
+
+document.getElementById(
+"progressBar"
+).style.width =
+progress + "%";
+
+let badge =
+document.getElementById(
+"badgeLevel"
+);
+
+if(totalPoint < 50){
+
+badge.innerText =
+"Eco Beginner";
+
+badge.style.background =
+"#16a34a";
+
+}
+
+else if(totalPoint < 150){
+
+badge.innerText =
+"Eco Warrior";
+
+badge.style.background =
+"#0ea5e9";
+
+}
+
+else{
+
+badge.innerText =
+"Earth Guardian";
+
+badge.style.background =
+"#f97316";
+
+}
+
+}
+
+/* ==========================================
+LAPORAN AKSI
+========================================== */
+
+function saveActionReport(){
+
+const desc =
+document.getElementById(
+"activityDesc"
+).value;
+
+const location =
+document.getElementById(
+"activityLocation"
+).value;
+
+const date =
+document.getElementById(
+"activityDate"
+).value;
+
+if(
+desc === "" ||
+location === "" ||
+date === ""
+){
+
+alert(
+"Lengkapi seluruh laporan aksi terlebih dahulu."
+);
+
+return;
+
+}
+
+reports.push({
+
+desc,
+location,
+date
+
+});
+
+localStorage.setItem(
+
+"eco_reports",
+
+JSON.stringify(
+reports
+)
+
+);
+
+totalAction++;
+
+localStorage.setItem(
+
+"eco_total_action",
+
+totalAction
+
+);
+
+updateStreak();
+
+saveWeeklyPoint();
+
+document.getElementById(
+"activityDesc"
+).value="";
+
+document.getElementById(
+"activityLocation"
+).value="";
+
+loadDashboard();
+
+}
+
+/* ==========================================
+STREAK 7 HARI
+========================================== */
+
+function updateStreak(){
+
+let today =
+new Date()
+.toDateString();
+
+let lastDate =
+localStorage.getItem(
+"eco_last_action"
+);
+
+if(lastDate===null){
+
+streak=1;
+
+}
+else{
+
+let yesterday =
+new Date();
+
+yesterday.setDate(
+yesterday.getDate()-1
+);
+
+if(
+
+lastDate ===
+yesterday.toDateString()
+
+){
+
+streak++;
+
+}
+else if(
+
+lastDate !== today
+
+){
+
+streak = 1;
+
+}
+
+}
+
+localStorage.setItem(
+"eco_last_action",
+today
+);
+
+localStorage.setItem(
+"eco_streak",
+streak
+);
+
+}
+
+/* ==========================================
+REKAP MINGGUAN
+========================================== */
+
+function saveWeeklyPoint(){
+
+let today =
+new Date().getDay();
+
+weeklyData[today] += 10;
+
+localStorage.setItem(
+
+"eco_weekly",
+
+JSON.stringify(
+weeklyData
+)
+
+);
+
+}
+
+function loadWeeklyTable(){
+
+if(
+document.getElementById(
+"mondayPoint"
+)
+){
+
+document.getElementById(
+"mondayPoint"
+).innerText=
+weeklyData[1];
+
+document.getElementById(
+"tuesdayPoint"
+).innerText=
+weeklyData[2];
+
+document.getElementById(
+"wednesdayPoint"
+).innerText=
+weeklyData[3];
+
+document.getElementById(
+"thursdayPoint"
+).innerText=
+weeklyData[4];
+
+document.getElementById(
+"fridayPoint"
+).innerText=
+weeklyData[5];
+
+document.getElementById(
+"saturdayPoint"
+).innerText=
+weeklyData[6];
+
+document.getElementById(
+"sundayPoint"
+).innerText=
+weeklyData[0];
+
+}
+
+}
+
+/* ==========================================
+TAMPILKAN LAPORAN
+========================================== */
+
+function loadReports(){
+
+const container =
+document.getElementById(
+"reportContainer"
+);
+
+if(!container)
+return;
+
+container.innerHTML="";
+
+reports.forEach(item=>{
+
+container.innerHTML += `
+
+<div class="card">
+
+<h3>📍 ${item.location}</h3>
+
+<p>${item.desc}</p>
+
+<p>
+
+📅 ${item.date}
+
+</p>
+
+</div>
+
+`;
+
+});
+
+}
+
+/* ==========================================
+UPLOAD FOTO
+========================================== */
+
+const uploadInput =
+document.getElementById(
+"photoUpload"
+);
+
+if(uploadInput){
+
+uploadInput.addEventListener(
+
+"change",
+
+function(e){
+
+const file =
+e.target.files[0];
+
+if(!file)
+return;
+
+const reader =
+new FileReader();
+
+reader.onload =
+function(event){
+
+gallery.push(
+event.target.result
+);
+
+localStorage.setItem(
+
+"eco_gallery",
+
+JSON.stringify(
+gallery
+)
+
+);
+
+loadGallery();
+
+};
+
+reader.readAsDataURL(
+file
+);
+
+}
+
+);
+
+}
+
+/* ==========================================
+GALERI
+========================================== */
+
+function loadGallery(){
+
+const galleryContainer =
+document.getElementById(
+"galleryContainer"
+);
+
+if(!galleryContainer)
+return;
+
+galleryContainer.innerHTML="";
+
+gallery.forEach(img=>{
+
+galleryContainer.innerHTML +=
+
+`
+
+<img src="${img}">
+
+`;
+
+});
+
+}
+
+/* ==========================================
+SERTIFIKAT
+========================================== */
+
+function checkCertificate(){
+
+if(streak >= 7){
+
+document.getElementById(
+"certificateSection"
+).style.display=
+"block";
+
+}else{
+
+document.getElementById(
+"certificateSection"
+).style.display=
+"none";
+
+}
+
+}
+
+/* ==========================================
+AUTO LOAD
+========================================== */
+
+loadDashboard();
+
+</script>
+
+</body>
+</html>
